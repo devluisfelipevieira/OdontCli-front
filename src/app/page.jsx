@@ -20,9 +20,7 @@ export default function Home() {
       <h1>Todos os Pacientes</h1>
       <ul>
         {patientList.map((patient) => (
-          <li>
-            {patient.name} - ID: {patient.id}
-          </li>
+          <li>{patient.name}</li>
         ))}
       </ul>
     </>

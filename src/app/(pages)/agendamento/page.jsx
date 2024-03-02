@@ -1,6 +1,6 @@
 import Schedule from "@/components/Schedule";
 
-export default function NewAppointment() {
+export default function Appointments() {
   return (
     <>
       <Schedule />

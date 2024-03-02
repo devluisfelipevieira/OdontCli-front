@@ -1,17 +1,17 @@
 "use client";
 
 import axiosInstance from "@/helper/axios-instance";
-import useDateConverter from "@/hooks/useDateConverter";
 import { useEffect, useState } from "react";
+import PutPatientFormContainer from "@/components/PatientForm/PutPatientFormContainer";
 
 export default function PatientSearcher() {
-  const [patientName, setpatientName] = useState();
+  const [patientName, setPatientName] = useState();
   const [errorMessage, setErrorMessage] = useState();
   const [searchPatient, setSearchPatient] = useState();
 
   const handleChange = (e) => {
     const { value } = e.target;
-    setpatientName(value);
+    setPatientName(value);
   };
 
   const handleSubmit = async (e) => {
@@ -59,14 +59,7 @@ export default function PatientSearcher() {
       {errorMessage && <p>{errorMessage}</p>}
       {searchPatient &&
         searchPatient.map((patient) => (
-          <div key={patient.id}>
-            <h4>{patient.name}</h4>
-            <span>Id: {patient.id}</span>
-            <span>
-              Data de Nascimento: {useDateConverter(patient.bornDate)}
-            </span>
-            <button>Cadastro</button>
-          </div>
+          <PutPatientFormContainer patient={patient} />
         ))}
       {/*dessa forma verificamos se " errorMessage e searchPatient existe antes de tentar
         renderizar, evitando assim um erro de elemento undefined"*/}

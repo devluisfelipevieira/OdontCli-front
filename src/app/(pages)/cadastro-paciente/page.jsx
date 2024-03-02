@@ -1,9 +1,9 @@
-import PatientForm from "@/components/PatientForm";
+import PostPatientFormContainer from "@/components/PatientForm/PostPatientFormContainer";
 
 export default function PatientCadaster() {
   return (
     <>
-      <PatientForm button={"Cadastrar"} />
+      <PostPatientFormContainer />
     </>
   );
 }

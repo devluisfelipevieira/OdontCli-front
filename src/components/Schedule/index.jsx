@@ -26,7 +26,7 @@ export default function Schedule() {
     e.preventDefault();
     const params = {
       initialDate: dataForm.initialDate,
-      endDate: dataForm.endDate,
+      endDate: dataForm.endDate + "T24:00",
       professionalId: dataForm.professionalId,
     };
 
