@@ -23,10 +23,11 @@ export default function Header() {
           <Nav className="me-auto">
             <NavDropdown title="Cadastros" id="collapsible-nav-dropdown">
               <Link href={"/cadastro-paciente"}>Cadastrar Paciente</Link>
+              <Link href={"/pesquisar-id"}>Buscar ID de Paciente</Link>
               <Link href={"/atualizar-cadastro"}>
                 Atualizar Cadastro do Paciente
               </Link>
-              <NavDropdown.Divider />
+              {/* <NavDropdown.Divider />
               <Link href={"/cadastro-profissional"}>
                 Cadastrar Profissional
               </Link>
@@ -36,9 +37,9 @@ export default function Header() {
               </Link>
               <Link href={"/procedimento"}>Visualizar Procedimento</Link>
               <Link href={"/cadastro-usuario"}>Cadastrar usuário</Link>
-              <Link href={"/deletar-usuario"}>Excluir usuário</Link>
+              <Link href={"/deletar-usuario"}>Excluir usuário</Link> */}{" "}
+              // será implementado quando houver sistema de login
             </NavDropdown>
-            <Link href={"/recepcao"}>Recepção</Link>
             <NavDropdown title="Agendamentos" id="collapsible-nav-dropdown">
               <Link href="/agendamento">Agenda</Link>
               <Link href="/agendamento-paciente">Verificar agendamento</Link>

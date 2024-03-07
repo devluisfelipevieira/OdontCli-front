@@ -29,7 +29,6 @@ export default function Schedule() {
       endDate: dataForm.endDate + "T24:00",
       professionalId: dataForm.professionalId,
     };
-
     axiosInstance
       .get("agendamentos", {
         params: params,

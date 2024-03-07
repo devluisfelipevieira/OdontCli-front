@@ -5,31 +5,23 @@ import { useEffect, useState } from "react";
 import PutPatientFormContainer from "@/components/PatientForm/PutPatientFormContainer";
 
 export default function PatientSearcher() {
-  const [patientName, setPatientName] = useState();
+  const [patientId, setPatientId] = useState();
   const [errorMessage, setErrorMessage] = useState();
   const [searchPatient, setSearchPatient] = useState();
 
   const handleChange = (e) => {
     const { value } = e.target;
-    setPatientName(value);
+    setPatientId(value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const params = {
-      name: patientName.toUpperCase(),
-    };
     try {
-      await axiosInstance
-        .get("pesquisar-paciente", {
-          params: params,
-        })
-        .then((res) => {
-          console.log(res.data);
-          setSearchPatient(res.data);
-          setErrorMessage(null);
-        });
+      await axiosInstance.get(`pacientes/${patientId}`).then((res) => {
+        console.log(res.data);
+        setSearchPatient(res.data);
+        setErrorMessage(null);
+      });
     } catch (error) {
       if (error.response && error.response.status === 404) {
         setSearchPatient(null);
@@ -42,25 +34,22 @@ export default function PatientSearcher() {
 
   useEffect(() => {
     console.log(searchPatient);
-  });
+  }, [searchPatient]);
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="patientName">Nome do Paciente:</label>
+        <label htmlFor="patientId">ID do Paciente:</label>
         <input
           type="text"
-          name="patientName"
-          id="patientName"
+          name="patientId"
+          id="patientId"
           onChange={handleChange}
         />
         <button type="submit">Pesquisar</button>
       </form>
       {errorMessage && <p>{errorMessage}</p>}
-      {searchPatient &&
-        searchPatient.map((patient) => (
-          <PutPatientFormContainer patient={patient} />
-        ))}
+      {searchPatient && <PutPatientFormContainer patient={searchPatient} />}
       {/*dessa forma verificamos se " errorMessage e searchPatient existe antes de tentar
         renderizar, evitando assim um erro de elemento undefined"*/}
     </>

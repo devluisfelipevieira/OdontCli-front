@@ -30,7 +30,7 @@ export default function CreateAppointment() {
 
     try {
       const appointment = await axiosInstance.post("agendamentos", postData);
-      console.log(appointment);
+      console.log(appointment.data);
     } catch (error) {
       console.log(error);
     }
