@@ -1,0 +1,11 @@
+.navLink {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  border-bottom: 1px solid white;
+}
+
+.mainNavLink {
+  @extend .navLink;
+  border: none;
+}

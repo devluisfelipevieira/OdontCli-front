@@ -7,6 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
+import styles from "./styles.module.scss";
 
 export default function Header() {
   return (
@@ -17,14 +18,20 @@ export default function Header() {
       data-bs-theme="dark"
     >
       <Container>
-        <Link href={"/"}>OdontCli</Link>
+        <Link class={styles.mainNavLink} href={"/"}>
+          OdontCli
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Cadastros" id="collapsible-nav-dropdown">
-              <Link href={"/cadastro-paciente"}>Cadastrar Paciente</Link>
-              <Link href={"/pesquisar-id"}>Buscar ID de Paciente</Link>
-              <Link href={"/atualizar-cadastro"}>
+              <Link class={styles.navLink} href={"/cadastro-paciente"}>
+                Cadastrar Paciente
+              </Link>
+              <Link class={styles.navLink} href={"/pesquisar-id"}>
+                Buscar ID de Paciente
+              </Link>
+              <Link class={styles.navLink} href={"/atualizar-cadastro"}>
                 Atualizar Cadastro do Paciente
               </Link>
               {/* <NavDropdown.Divider />
@@ -37,12 +44,16 @@ export default function Header() {
               </Link>
               <Link href={"/procedimento"}>Visualizar Procedimento</Link>
               <Link href={"/cadastro-usuario"}>Cadastrar usuário</Link>
-              <Link href={"/deletar-usuario"}>Excluir usuário</Link> */}{" "}
-              // será implementado quando houver sistema de login
+              <Link href={"/deletar-usuario"}>Excluir usuário</Link> */}
+              {/* será implementado quando houver sistema de login*/}
             </NavDropdown>
             <NavDropdown title="Agendamentos" id="collapsible-nav-dropdown">
-              <Link href="/agendamento">Agenda</Link>
-              <Link href="/agendamento-paciente">Verificar agendamento</Link>
+              <Link class={styles.navLink} href="/agendamento">
+                Agenda
+              </Link>
+              <Link class={styles.navLink} href="/agendamento-paciente">
+                Verificar agendamento
+              </Link>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
