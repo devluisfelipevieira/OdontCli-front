@@ -10,18 +10,22 @@ export default function PatientSearcher(props) {
   return (
     <>
       <Form onSubmit={props.handleSubmit}>
-        <Form.Group as={Col} controlId="patientId">
+        <Row>
           <Form.Label>ID do Paciente:</Form.Label>
-          <Form.Control
-            type="number"
-            name="patientId"
-            id="patientId"
-            onChange={props.handleChange}
-          />
-        </Form.Group>
-        <Button variant="secondary" type="submit">
-          Pesquisar
-        </Button>
+          <Col>
+            <Form.Control
+              type="number"
+              name="patientId"
+              id="patientId"
+              onChange={props.handleChange}
+            />
+          </Col>
+          <Col>
+            <Button variant="secondary" type="submit">
+              Pesquisar
+            </Button>
+          </Col>
+        </Row>
       </Form>
       {props.errorMessage && <p>{props.errorMessage}</p>}
       {props.searchPatient && (
