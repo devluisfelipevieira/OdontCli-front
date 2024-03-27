@@ -51,6 +51,9 @@ export default function Header() {
               <Link class={styles.navLink} href="/agendamento">
                 Agenda
               </Link>
+              <Link class={styles.navLink} href="/criar-agendamento">
+                Novo agendamento
+              </Link>
               <Link class={styles.navLink} href="/agendamento-paciente">
                 Verificar agendamento
               </Link>

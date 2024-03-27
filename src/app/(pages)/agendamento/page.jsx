@@ -1,9 +1,9 @@
-import Schedule from "@/components/Schedule";
+import ScheduleContainer from "@/components/Schedule/ScheduleContainer";
 
 export default function Appointments() {
   return (
     <>
-      <Schedule />
+      <ScheduleContainer />
     </>
   );
 }

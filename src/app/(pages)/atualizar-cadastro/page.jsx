@@ -3,7 +3,6 @@ import PatientSearcherContainer from "@/components/PatientSearcher/PatientSearch
 export default function SearchPatient() {
   return (
     <>
-      <h3>Atualizar Cadastro do Paciente</h3>
       <PatientSearcherContainer />
     </>
   );

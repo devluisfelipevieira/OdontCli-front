@@ -1,9 +1,9 @@
-import CreateAppointment from "@/components/CreateAppointment";
+import CreateAppointmentContainer from "@/components/CreateAppointment/CreateAppointmentContainer";
 
 export default function NewAppointment() {
   return (
     <>
-      <CreateAppointment />
+      <CreateAppointmentContainer />
     </>
   );
 }

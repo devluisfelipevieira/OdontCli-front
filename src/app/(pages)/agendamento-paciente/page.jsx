@@ -1,9 +1,9 @@
-import PatientAppointmentForm from "@/components/PatientAppointmentForm";
+import PatientAppointmentFormContainer from "@/components/PatientAppointmentForm/PatientAppointmentFormContainer";
 
 export default function AppointmentForPatient() {
   return (
     <>
-      <PatientAppointmentForm />
+      <PatientAppointmentFormContainer />
     </>
   );
 }
