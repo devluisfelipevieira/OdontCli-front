@@ -10,7 +10,7 @@ export default function PostPatientFormContainer() {
     bornDate: "",
     gender: "",
     cpf: "",
-    address: "",
+    city: "",
     email: "",
     phone: "",
   });
@@ -30,19 +30,20 @@ export default function PostPatientFormContainer() {
       bornDate: dataForm.bornDate,
       gender: dataForm.gender,
       cpf: dataForm.cpf,
-      address: dataForm.address,
+      city: dataForm.city,
       email: dataForm.email,
       phone: dataForm.phone,
     };
     try {
       await axiosInstance.post("pacientes", postData);
       console.log(postData);
+      alert(`Paciente ${dataForm.name} cadastrado com sucesso`);
       setDataForm({
         name: "",
         bornDate: "",
         gender: "",
         cpf: "",
-        address: "",
+        city: "",
         email: "",
         phone: "",
       });

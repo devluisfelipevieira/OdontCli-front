@@ -61,13 +61,13 @@ export default function PatientForm(props) {
                 <option value="Feminino">Feminino</option>
               </Form.Select>
             </Form.Group>
-            <Form.Group as={Col} controlId="address">
+            <Form.Group as={Col} controlId="city">
               <Form.Label>Cidade:</Form.Label>
               <Form.Control
                 type="text"
-                id="address"
-                name="address"
-                value={props.dataForm.address}
+                id="city"
+                name="city"
+                value={props.dataForm.city}
                 onChange={props.handleChange}
                 required
               />
