@@ -1,16 +1,14 @@
 "use client";
 
 import axiosInstance from "@/helper/axios-instance";
+import dayjs from "dayjs";
 import { useState } from "react";
 import PatientForm from "./PatientForm";
 
 export default function PutPatientFormContainer(props) {
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = `0${date.getMonth() + 1}`.slice(-2); // Adiciona um zero à esquerda se necessário
-    const day = `0${date.getDate()}`.slice(-2); // Adiciona um zero à esquerda se necessário
-    return `${year}-${month}-${day}`;
+    const date = dayjs(dateString).format("YYYY-MM-DD");
+    return date;
   };
   const [dataForm, setDataForm] = useState({
     id: props.patient.id,

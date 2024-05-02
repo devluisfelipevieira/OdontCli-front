@@ -1,4 +1,6 @@
+import dayjs from "dayjs";
+
 export default function (date) {
-  const dateConverted = new Date(date).toLocaleDateString("pt-BR");
+  const dateConverted = dayjs(date).format("DD/MM/YYYY");
   return dateConverted;
 }
