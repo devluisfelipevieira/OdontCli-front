@@ -17,12 +17,14 @@ export default function Home() {
   return (
     <>
       <h1>Início</h1>
-      <h1>Todos os Pacientes</h1>
+      <h1>Pacientes Cadastrados</h1>
       <ul>
         {patientList.map((patient) => (
           <>
-            <li>{patient.name}</li>
-            <li>{useDateConverter(patient.bornDate)}</li>
+            <li>
+              ID:{patient.id} - {patient.name} - Data de Nascimento:{" "}
+              {useDateConverter(patient.bornDate)}
+            </li>
           </>
         ))}
       </ul>

@@ -16,7 +16,7 @@ export default function PutPatientFormContainer(props) {
     bornDate: formatDate(props.patient.bornDate),
     gender: props.patient.gender,
     cpf: props.patient.cpf,
-    address: props.patient.address,
+    city: props.patient.city,
     email: props.patient.email,
     phone: props.patient.phone,
   });
@@ -34,7 +34,7 @@ export default function PutPatientFormContainer(props) {
       bornDate: dataForm.bornDate,
       gender: dataForm.gender,
       cpf: dataForm.cpf,
-      address: dataForm.address,
+      city: dataForm.city,
       email: dataForm.email,
       phone: dataForm.phone,
     };
@@ -43,7 +43,7 @@ export default function PutPatientFormContainer(props) {
       alert("Cadastro atualizado com sucesso!");
     } catch (error) {
       console.log(error);
-      alert(error);
+      alert(error.response.data.error);
     }
   };
   return (

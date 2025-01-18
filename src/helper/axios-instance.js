@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const baseURL = process.env.NEXT_PUBLIC_BASEURL;
+
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3001/odontcli/",
+  baseURL,
 });
 
 export default axiosInstance;
