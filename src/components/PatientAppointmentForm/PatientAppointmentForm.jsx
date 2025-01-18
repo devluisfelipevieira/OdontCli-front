@@ -1,6 +1,5 @@
 "use client";
 
-import useDateConverter from "@/hooks/useDateConverter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -52,8 +51,7 @@ export default function PatientAppointmentForm(props) {
           <tbody>
             {props.appointmentList.map((appointment) => (
               <tr key={appointment.id}>
-                {/* <td>{useDateConverter(appointment.dateHour)}</td> */}
-                <td>{useDateConverter(appointment.date)}</td>
+                <td>{appointment.date}</td>
                 <td>{appointment.procedureName}</td>
                 <td>{appointment.professionalName}</td>
               </tr>

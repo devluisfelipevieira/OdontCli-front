@@ -11,6 +11,10 @@ import styles from "./styles.module.scss";
 import { Container } from "react-bootstrap";
 
 export default function Schedule(props) {
+  props.appointmentList.map((appointment) => {
+    appointment.date = useDateConverter(appointment.date);
+    appointment.payed = usePayedMessage(appointment.payed);
+  });
   return (
     <>
       <Container fluid>
@@ -71,11 +75,11 @@ export default function Schedule(props) {
           <>
             <div key={appointment.id}>
               <h3>Paciente: {appointment.patientName}</h3>
-              <p>Data: {useDateConverter(appointment.date)}</p>
+              <p>Data: {appointment.date}</p>
               <p>Horario: {appointment.time}</p>
               <p>Procedimento: {appointment.procedureName}</p>
               <p>Preço: R${appointment.value}</p>
-              <p>Pagamento: {usePayedMessage(appointment.payed)}</p>
+              <p>Pagamento: {appointment.payed}</p>
             </div>
           </>
         ))}

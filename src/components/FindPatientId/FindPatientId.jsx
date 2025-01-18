@@ -10,6 +10,9 @@ import styles from "./styles.module.scss";
 import useDateConverter from "@/hooks/useDateConverter";
 
 export default function FindPatientId(props) {
+  props.searchPatients.map((patient) => {
+    patient.bornDate = useDateConverter(patient.bornDate);
+  });
   return (
     <>
       <Container fluid>
@@ -80,9 +83,7 @@ export default function FindPatientId(props) {
                 <tr className={styles.patientContent} key={patient.id}>
                   <td className={styles.patientInfo}>{patient.id}</td>
                   <td className={styles.patientInfo}>{patient.name}</td>
-                  <td className={styles.patientInfo}>
-                    {useDateConverter(patient.bornDate)}
-                  </td>
+                  <td className={styles.patientInfo}>{patient.bornDate}</td>
                   <td className={styles.patientInfo}>{patient.cpf}</td>
                 </tr>
               ))}

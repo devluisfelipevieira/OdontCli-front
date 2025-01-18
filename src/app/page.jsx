@@ -14,6 +14,10 @@ export default function Home() {
       .catch((err) => console.log(err));
   }, []);
 
+  patientList.map((patient) => {
+    patient.bornDate = useDateConverter(patient.bornDate);
+  });
+
   return (
     <>
       <h1>Início</h1>
@@ -22,8 +26,8 @@ export default function Home() {
         {patientList.map((patient) => (
           <>
             <li>
-              ID:{patient.id} - {patient.name} - Data de Nascimento:{" "}
-              {useDateConverter(patient.bornDate)}
+              ID:{patient.id} - {patient.name} - Data de Nascimento{" "}
+              {patient.bornDate}
             </li>
           </>
         ))}
