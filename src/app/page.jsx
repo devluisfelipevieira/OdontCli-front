@@ -1,6 +1,5 @@
 "use client";
 import axiosInstance from "@/helper/axios-instance";
-import useDateConverter from "@/hooks/useDateConverter";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -9,26 +8,20 @@ export default function Home() {
     axiosInstance
       .get("pacientes")
       .then((res) => {
-        const patientsWithConvertedDates = res.data.map((patients) => ({
-          ...patients,
-          bornDate: useDateConverter(patients.bornDate),
-        }));
-
-        setPatientList(patientsWithConvertedDates);
+        setPatientList(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <>
-      <h1>Início</h1>
       <h1>Pacientes Cadastrados</h1>
       <ul>
         {patientList.map((patient) => (
           <>
-            <li key={patient.id}>
-              ID:{patient.id} - {patient.name} - Data de Nascimento{" "}
-              {patient.bornDate}
+            <li>
+              {patient.name} | ID: {patient.id} | Data de Nascimento:{" "}
+              {patient.bornDate} | CPF: {patient.cpf}
             </li>
           </>
         ))}

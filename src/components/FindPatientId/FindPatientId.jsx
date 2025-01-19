@@ -7,12 +7,8 @@ import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 import { Container } from "react-bootstrap";
 import styles from "./styles.module.scss";
-import useDateConverter from "@/hooks/useDateConverter";
 
 export default function FindPatientId(props) {
-  props.searchPatients.map((patient) => {
-    patient.bornDate = useDateConverter(patient.bornDate);
-  });
   return (
     <>
       <Container fluid>

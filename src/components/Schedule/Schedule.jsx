@@ -1,6 +1,5 @@
 "use client";
 
-import useDateConverter from "@/hooks/useDateConverter";
 import usePayedMessage from "@/hooks/usePayedMessage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
@@ -9,12 +8,9 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import styles from "./styles.module.scss";
 import { Container } from "react-bootstrap";
+import { useEffect } from "react";
 
 export default function Schedule(props) {
-  props.appointmentList.map((appointment) => {
-    appointment.date = useDateConverter(appointment.date);
-    appointment.payed = usePayedMessage(appointment.payed);
-  });
   return (
     <>
       <Container fluid>

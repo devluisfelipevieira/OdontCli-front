@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import axiosInstance from "@/helper/axios-instance";
 import CreateAppointment from "./CreateAppointment";
-import useDateConverter from "@/hooks/useDateConverter";
 
 export default function CreateAppointmentContainer() {
   const [dataForm, setDataForm] = useState({
@@ -56,13 +55,7 @@ export default function CreateAppointmentContainer() {
       const appointment = await axiosInstance.post("agendamentos", postData);
       console.log(appointment.data);
       alert(
-        `${appointment.data.procedureName} para paciente ${
-          appointment.data.patientName
-        } com Dr. ${
-          appointment.data.professionalName
-        } para a data ${useDateConverter(
-          appointment.data.date
-        )} marcado com sucesso!`
+        `${appointment.data.procedureName} para paciente ${appointment.data.patientName} com Dr. ${appointment.data.professionalName} para a data ${appointment.data.date} marcado com sucesso!`
       );
       setDataForm({
         patientId: "",
