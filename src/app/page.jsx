@@ -26,7 +26,7 @@ export default function Home() {
       <ul>
         {patientList.map((patient) => (
           <>
-            <li>
+            <li key={patient.id}>
               ID:{patient.id} - {patient.name} - Data de Nascimento{" "}
               {patient.bornDate}
             </li>
