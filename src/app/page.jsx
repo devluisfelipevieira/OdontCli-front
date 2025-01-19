@@ -9,11 +9,12 @@ export default function Home() {
     axiosInstance
       .get("pacientes")
       .then((res) => {
-        setPatientList(
-          res.data.map((patient) => {
-            patient.bornDate = useDateConverter(patient.bornDate);
-          })
-        );
+        const patientsWithConvertedDates = res.data.map((patients) => ({
+          ...patients,
+          bornDate: useDateConverter(patients.bornDate),
+        }));
+
+        setPatientList(patientsWithConvertedDates);
       })
       .catch((err) => console.log(err));
   }, []);
