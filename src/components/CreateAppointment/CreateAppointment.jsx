@@ -36,7 +36,9 @@ export default function CreateAppointment(props) {
                 <option value="">Selecione</option>
                 {props.professionalList &&
                   props.professionalList.map((professional) => (
-                    <option value={professional.id}>{professional.name}</option>
+                    <option key={professional.id} value={professional.id}>
+                      {professional.name}
+                    </option>
                   ))}
               </Form.Select>
             </Col>
@@ -51,7 +53,9 @@ export default function CreateAppointment(props) {
                 <option value="">Selecione</option>
                 {props.procedureList &&
                   props.procedureList.map((procedure) => (
-                    <option value={procedure.id}>{procedure.name}</option>
+                    <option key={procedure.id} value={procedure.id}>
+                      {procedure.name}
+                    </option>
                   ))}
               </Form.Select>
             </Col>

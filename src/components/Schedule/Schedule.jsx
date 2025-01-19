@@ -50,7 +50,9 @@ export default function Schedule(props) {
                 <option value="">Selecione</option>
                 {props.professionalList &&
                   props.professionalList.map((professional) => (
-                    <option value={professional.id}>{professional.name}</option>
+                    <option key={professional.id} value={professional.id}>
+                      {professional.name}
+                    </option>
                   ))}
               </Form.Select>
             </Col>
